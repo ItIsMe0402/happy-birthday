@@ -6,8 +6,10 @@ import kotlinx.serialization.Serializable
 sealed class Destination {
 
     @Serializable
-    data object Settings
+    data object Settings : Destination()
 
     @Serializable
-    data object Greeting
+    data class Greeting(
+        val birthdayInfo: BirthdayInfo,
+    ) : Destination()
 }

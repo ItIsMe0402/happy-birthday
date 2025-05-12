@@ -6,6 +6,7 @@ class HappyBirthdayApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        initNapier()
         initKoin {
         }
     }
