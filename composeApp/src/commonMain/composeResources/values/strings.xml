@@ -4,6 +4,8 @@
     <string name="ip_address">IP Address</string>
     <string name="port">Port</string>
     <string name="connect_and_greet">Connect &amp; Greet</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
 
     <string name="greeting_beginning">Today %1$s is</string>
     <string name="share_the_news">Share the news</string>

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.AlertDialog
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
@@ -23,11 +24,14 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.github.itisme0402.happybirthday.domain.BirthdayInfo
 import happybirthday.composeapp.generated.resources.Res
 import happybirthday.composeapp.generated.resources.connect_and_greet
+import happybirthday.composeapp.generated.resources.error
 import happybirthday.composeapp.generated.resources.ip_address
 import happybirthday.composeapp.generated.resources.port
+import happybirthday.composeapp.generated.resources.retry
 import happybirthday.composeapp.generated.resources.settings
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
@@ -45,13 +49,19 @@ fun SettingsScreen(
             connectAndGreet = { _, _ ->
             },
             greetingFlow = emptyFlow(),
+            currentErrorMessage = null,
+            resetError = {},
             onNavigateToGreeting = onNavigateToGreeting,
         )
     } else {
         val viewModel = koinViewModel<SettingsViewModel>()
+        val currentErrorMessage by viewModel.currentErrorMessage.collectAsStateWithLifecycle()
+
         SettingsScreen(
             connectAndGreet = viewModel::connectAndGreet,
             greetingFlow = viewModel.greetingFlow,
+            currentErrorMessage = currentErrorMessage,
+            resetError = viewModel::consumeError,
             onNavigateToGreeting = onNavigateToGreeting,
         )
     }
@@ -61,6 +71,8 @@ fun SettingsScreen(
 fun SettingsScreen(
     connectAndGreet: (ip: String, port: String) -> Unit,
     greetingFlow: Flow<BirthdayInfo>,
+    currentErrorMessage: String?,
+    resetError: () -> Unit,
     onNavigateToGreeting: (BirthdayInfo) -> Unit = {},
 ) {
     val navigateToGreeting by rememberUpdatedState(onNavigateToGreeting)
@@ -111,5 +123,18 @@ fun SettingsScreen(
         ) {
             Text(stringResource(Res.string.connect_and_greet))
         }
+    }
+
+    if (currentErrorMessage != null) {
+        AlertDialog(
+            title = { Text(stringResource(Res.string.error)) },
+            text = { Text(currentErrorMessage) },
+            onDismissRequest = resetError,
+            confirmButton = {
+                Button(onClick = { connectAndGreet(ip, port) }) {
+                    Text(stringResource(Res.string.retry))
+                }
+            },
+        )
     }
 }
