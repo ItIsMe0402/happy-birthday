@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.intl.Locale
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
@@ -202,11 +203,13 @@ fun HappyBirthdayScreen(
 
         Text(
             text = stringResource(Res.string.greeting_beginning, name).toUpperCase(Locale.current),
+            textAlign = TextAlign.Center,
+            maxLines = 2,
             style = MaterialTheme.typography.h5,
             modifier = Modifier
                 .constrainAs(greetingBeginningText) {
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
+                    start.linkTo(parent.start, margin = 56.dp)
+                    end.linkTo(parent.end, margin = 56.dp)
                 }
                 .zIndex(2f),
         )
@@ -227,7 +230,8 @@ fun HappyBirthdayScreen(
                 top.linkTo(ageCountImage.top)
                 bottom.linkTo(ageCountImage.bottom)
                 absoluteRight.linkTo(ageCountImage.absoluteLeft, margin = 22.dp)
-            },
+            }
+                .zIndex(2f),
         )
 
         Image(
@@ -269,7 +273,8 @@ fun HappyBirthdayScreen(
                 top.linkTo(ageCountImage.top)
                 bottom.linkTo(ageCountImage.bottom)
                 absoluteLeft.linkTo(ageCountImage.absoluteRight, margin = 22.dp)
-            },
+            }
+                .zIndex(2f),
         )
 
         Spacer(
