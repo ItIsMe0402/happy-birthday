@@ -2,11 +2,11 @@
 <resources>
     <plurals name="months_old">
         <item quantity="one">month old</item>
-        <item quantity="many">months old</item>
+        <item quantity="other">months old</item>
     </plurals>
 
     <plurals name="years_old">
         <item quantity="one">year old</item>
-        <item quantity="many">years old</item>
+        <item quantity="other">years old</item>
     </plurals>
 </resources>
