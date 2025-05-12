@@ -43,7 +43,13 @@ class WebSocketClient(
                 )
                     .toLocalDateTime(TimeZone.currentSystemDefault())
                     .date,
-                theme = remoteBirthdayInfo.theme,
+                // TODO: Change to dynamic theming instead of using hardcoded themes and static assets
+                theme = when (remoteBirthdayInfo.theme) {
+                    "pelican" -> BirthdayGreetingTheme.PELICAN
+                    "fox" -> BirthdayGreetingTheme.FOX
+                    "elephant" -> BirthdayGreetingTheme.ELEPHANT
+                    else -> throw IllegalArgumentException("Unknown theme: ${remoteBirthdayInfo.theme}")
+                },
             )
             _birthdayInfoFlow.emit(birthdayInfo)
         }

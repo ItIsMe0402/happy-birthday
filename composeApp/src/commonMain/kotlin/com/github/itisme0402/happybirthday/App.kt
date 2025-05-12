@@ -13,7 +13,7 @@ import kotlin.reflect.typeOf
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
+    HappyBirthdayTheme {
         val navController = rememberNavController()
         NavHost(
             navController = navController,
@@ -32,7 +32,10 @@ fun App() {
                 ),
             ) { navBackStackEntry ->
                 val birthdayInfo = navBackStackEntry.toRoute<Destination.Greeting>().birthdayInfo
-                HappyBirthdayScreen(birthdayInfo)
+                HappyBirthdayScreen(
+                    onGoBack = navController::popBackStack,
+                    birthdayInfo = birthdayInfo,
+                )
             }
         }
     }
