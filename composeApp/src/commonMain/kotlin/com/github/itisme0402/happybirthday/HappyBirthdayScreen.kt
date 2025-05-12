@@ -208,8 +208,8 @@ fun HappyBirthdayScreen(
             style = MaterialTheme.typography.h5,
             modifier = Modifier
                 .constrainAs(greetingBeginningText) {
-                    start.linkTo(parent.start, margin = 56.dp)
-                    end.linkTo(parent.end, margin = 56.dp)
+                    start.linkTo(parent.start, margin = 80.dp)
+                    end.linkTo(parent.end, margin = 80.dp)
                 }
                 .zIndex(2f),
         )
