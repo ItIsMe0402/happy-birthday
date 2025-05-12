@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -321,7 +320,6 @@ fun HappyBirthdayScreen(
         Button(
             onClick = { /* TODO */ },
             elevation = null,
-            shape = RoundedCornerShape(50),
             modifier = Modifier
                 .constrainAs(shareButton) {
                     bottom.linkTo(parent.bottom, margin = 53.dp)
