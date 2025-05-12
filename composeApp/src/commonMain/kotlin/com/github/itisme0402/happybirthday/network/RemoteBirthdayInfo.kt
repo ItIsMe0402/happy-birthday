@@ -1,4 +1,4 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

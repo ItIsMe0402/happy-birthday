@@ -1,5 +1,7 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.di
 
+import com.github.itisme0402.happybirthday.network.WebSocketClient
+import com.github.itisme0402.happybirthday.settings.SettingsViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.websocket.WebSockets
 import io.ktor.serialization.kotlinx.KotlinxWebsocketSerializationConverter

@@ -1,5 +1,7 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.network
 
+import com.github.itisme0402.happybirthday.domain.BirthdayGreetingTheme
+import com.github.itisme0402.happybirthday.domain.BirthdayInfo
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.websocket.receiveDeserialized
 import io.ktor.client.plugins.websocket.webSocket

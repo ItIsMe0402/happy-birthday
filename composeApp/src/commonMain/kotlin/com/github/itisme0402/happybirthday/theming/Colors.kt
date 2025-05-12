@@ -1,4 +1,4 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.theming
 
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color

@@ -1,4 +1,4 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.domain
 
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable

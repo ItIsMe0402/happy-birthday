@@ -1,4 +1,4 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.theming
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable

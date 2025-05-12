@@ -1,7 +1,9 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.github.itisme0402.happybirthday.domain.BirthdayInfo
+import com.github.itisme0402.happybirthday.network.WebSocketClient
 import io.github.aakira.napier.Napier
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job

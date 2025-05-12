@@ -1,5 +1,6 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.navigation
 
+import com.github.itisme0402.happybirthday.domain.BirthdayInfo
 import kotlinx.serialization.Serializable
 
 @Serializable

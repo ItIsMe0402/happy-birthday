@@ -27,9 +27,11 @@ import androidx.compose.ui.zIndex
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
-import com.github.itisme0402.happybirthday.BirthdayGreetingTheme.ELEPHANT
-import com.github.itisme0402.happybirthday.BirthdayGreetingTheme.FOX
-import com.github.itisme0402.happybirthday.BirthdayGreetingTheme.PELICAN
+import com.github.itisme0402.happybirthday.domain.BirthdayGreetingTheme.ELEPHANT
+import com.github.itisme0402.happybirthday.domain.BirthdayGreetingTheme.FOX
+import com.github.itisme0402.happybirthday.domain.BirthdayGreetingTheme.PELICAN
+import com.github.itisme0402.happybirthday.domain.BirthdayInfo
+import com.github.itisme0402.happybirthday.theming.Colors
 import happybirthday.composeapp.generated.resources.Res
 import happybirthday.composeapp.generated.resources.bg_elephant
 import happybirthday.composeapp.generated.resources.bg_fox

@@ -1,4 +1,4 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.navigation
 
 import androidx.core.bundle.Bundle
 import androidx.core.uri.UriUtils

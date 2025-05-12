@@ -1,4 +1,4 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,6 +23,7 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.github.itisme0402.happybirthday.domain.BirthdayInfo
 import happybirthday.composeapp.generated.resources.Res
 import happybirthday.composeapp.generated.resources.connect_and_greet
 import happybirthday.composeapp.generated.resources.ip_address

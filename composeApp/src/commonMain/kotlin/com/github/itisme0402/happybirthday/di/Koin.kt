@@ -1,4 +1,4 @@
-package com.github.itisme0402.happybirthday
+package com.github.itisme0402.happybirthday.di
 
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
